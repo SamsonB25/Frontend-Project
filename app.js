@@ -34,7 +34,7 @@ async function getPlayerData(player) {
         src="${playerData.img}"
         class="card-img-center"
       />
-      <div id="card-b"class="card-body">
+      <div "class="card-body">
         <h5>${playerData.fullName} #${playerData.jerseyNum}</h5>
         <h6>Position: ${playerData.position}</h6>
         <h6>Height: ${playerData.height}</h6>
