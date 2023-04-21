@@ -36,6 +36,11 @@ h1 {
   color: white;
   border-radius: 10px;
 }
+
+/* search bar and button */
+form {
+  margin-bottom: 5px;
+}
 /* Search Bar player Card */
 .card {
   background-color: rgba(138, 138, 138, 0.8);
