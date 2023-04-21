@@ -16,6 +16,9 @@ async function getRoster() {
   //build table rows and cols with desired data from api
   // use a for each loop to iterate over the object inside of the given array
   data.reverse().forEach((obj) => {
+    if (obj.Number === null) {
+      obj.Number = "N/A";
+    }
     let ptble = `<tr>
   <td><img src=${obj.PhotoUrl} class="headshot"> ${obj.Name}</td>
   <td>${obj.Number}</td>
