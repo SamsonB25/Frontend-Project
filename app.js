@@ -31,11 +31,12 @@ async function getPlayerData(player) {
     // generate card using html
     let html = `<div id="player-card" class="card" style="width: 16rem">
       <img
+      id="photo"
         src="${playerData.img}"
         class="card-img-center"
       />
-      <div "class="card-body">
-        <h5>${playerData.fullName} #${playerData.jerseyNum}</h5>
+      <div id="player-info" "class="card-body">
+        <h5 id="name">${playerData.fullName} #${playerData.jerseyNum}</h5>
         <h6>Position: ${playerData.position}</h6>
         <h6>Height: ${playerData.height}</h6>
         <h6>Weight: ${playerData.weight}</h6>

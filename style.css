@@ -1,3 +1,4 @@
+/* Body */
 body {
   background-image: url(https://images7.alphacoders.com/981/981713.png);
   background-position: top;
@@ -10,7 +11,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-
+/* Nav Bar */
 #nav_bar {
   position: fixed;
   z-index: 10;
@@ -19,52 +20,61 @@ body {
   right: 0;
 }
 
-.card {
-  background-color: gray;
-}
-
 .logo {
   height: 2em;
   border-radius: 1em;
 }
-
-#player-card {
-  margin: auto;
-  text-align: justify;
-}
-
-.row {
-  justify-content: center;
-}
-
+/* Page Header */
 h1 {
   font-family: fantasy;
   color: white;
   -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: black;
 }
-
-p.card-title {
-  margin: 0;
-  text-align: center;
-  font-size: xx-small;
-}
-.text {
-  text-align: center;
-}
-
-.information-container {
-  color: black;
-  -webkit-text-stroke: 0.1px;
-  -webkit-text-stroke-color: red;
-}
-
+/* index.html article */
 #intro {
   color: white;
   border-radius: 10px;
 }
-/* news section */
+/* Search Bar player Card */
+.card {
+  background-color: rgba(138, 138, 138, 0.8);
+  border: 1px solid black;
+}
+
+#player-card {
+  padding: 10px;
+  margin: auto;
+  text-align: justify;
+  color: #000;
+}
+
+#player-info {
+  margin-top: 5px;
+  border: 1px solid red;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.549);
+  color: white;
+}
+#photo {
+  border: 1px solid Black;
+  border-radius: 10px;
+  background-color: hsla(234, 100%, 50%, 0.595);
+}
+#name {
+  text-align: center;
+}
+
+/* News section */
+.news-container {
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 4px;
+}
 #news {
+  border: 1px solid red;
   border-radius: 10px;
 }
 #news-title {
@@ -76,4 +86,48 @@ p.card-title {
 #posted-date {
   color: gray;
   font-size: 15px;
+}
+
+/* Roster table */
+.player-table {
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid white;
+  table-layout: auto;
+  min-width: 850px;
+}
+.headshot {
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid blue;
+}
+tr {
+  border: 1px solid red;
+}
+
+td {
+  color: whitesmoke;
+  border: 1px solid red;
+  text-align: justify;
+}
+th {
+  color: whitesmoke;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+/* scroll to top button */
+#to-top {
+  display: none;
+  border-radius: 45%;
+  border: none;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  position: fixed;
+  background-color: hsla(234, 100%, 50%, 0.595);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
 }
