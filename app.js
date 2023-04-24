@@ -12,7 +12,7 @@ async function getPlayerData(player) {
     );
     //convert the API response
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
 
     //find player and index of player to allow user to search for name instead of index
 
@@ -21,8 +21,7 @@ async function getPlayerData(player) {
       (obj) =>
         obj.Name === player ||
         obj.LastName === player ||
-        obj.FirstName === player ||
-        obj.Number === player
+        obj.FirstName === player
     );
 
     let { Name, FirstName, LastName } = data[index];
@@ -49,21 +48,20 @@ async function getPlayerData(player) {
         </div>
       </div>`;
         console.log(obj.Name, index);
-
-        if (
-          Name.toLowerCase() === player.toLowerCase() ||
-          FirstName.toLowerCase() === player.toLowerCase() ||
-          LastName.toLowerCase() === player.toLowerCase()
-        ) {
-          playerContainer.insertAdjacentHTML("afterbegin", html);
-          console.log(Name);
-        } else if (
-          Name.toLowerCase() == player.toLowerCase() ||
-          FirstName.toLowerCase() == player.toLowerCase() ||
-          LastName.toLowerCase() == player.toLowerCase()
-        ) {
-          alert(`${player} Doe No`);
-        }
+      }
+      if (
+        Name.toLowerCase() === player.toLowerCase() ||
+        FirstName.toLowerCase() === player.toLowerCase() ||
+        LastName.toLowerCase() === player.toLowerCase()
+      ) {
+        playerContainer.insertAdjacentHTML("afterbegin", html);
+        console.log(Name);
+      } else if (
+        Name.toLowerCase() == player.toLowerCase() ||
+        FirstName.toLowerCase() == player.toLowerCase() ||
+        LastName.toLowerCase() == player.toLowerCase()
+      ) {
+        alert(`${player} Doe No`);
       }
     });
 
