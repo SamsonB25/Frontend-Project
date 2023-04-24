@@ -16,8 +16,17 @@ async function getPlayerData(player) {
 
     //find player and index of player to allow user to search for name instead of index
 
-    let name = data.find((obj) => obj.Name === player).Name;
-    let index = data.findIndex((obj) => obj.Name === player);
+    // let name = data.find((obj) => obj.Name === player).Name;
+    let index = data.findIndex(
+      (obj) =>
+        obj.Name === player ||
+        obj.LastName === player ||
+        obj.FirstName === player ||
+        obj.Number === player
+    );
+
+    let { Name, FirstName, LastName } = data[index];
+
     // get data for card
     playerData = {
       fullName: data[index].Name,
@@ -44,7 +53,11 @@ async function getPlayerData(player) {
       </div>
     </div>`;
     // allow the user to search by first, last, or full name
-    if (name === player) {
+    if (
+      Name.toLowerCase() === player.toLowerCase() ||
+      FirstName.toLowerCase() === player.toLowerCase() ||
+      LastName.toLowerCase() === player.toLowerCase()
+    ) {
       playerContainer.insertAdjacentHTML("afterbegin", html);
     }
 
