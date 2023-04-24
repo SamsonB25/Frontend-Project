@@ -27,39 +27,40 @@ async function getPlayerData(player) {
 
     let { Name, FirstName, LastName } = data[index];
 
-    // get data for card
-    playerData = {
-      fullName: data[index].Name,
-      jerseyNum: data[index].Number,
-      position: data[index].Position,
-      height: data[index].Height,
-      weight: data[index].Weight,
-      status: data[index].Status,
-      img: data[index].PhotoUrl,
-    };
     // generate card using html
-    let html = `<div id="player-card" class="card" style="width: 16rem">
-      <img
-      id="photo"
-        src="${playerData.img}"
-        class="card-img-center"
-      />
-      <div id="player-info" "class="card-body">
-        <h5 id="name">${playerData.fullName} #${playerData.jerseyNum}</h5>
-        <h6>Position: ${playerData.position}</h6>
-        <h6>Height: ${playerData.height}</h6>
-        <h6>Weight: ${playerData.weight}</h6>
-        <h6>Status: ${playerData.status}</h6>
-      </div>
-    </div>`;
-    // allow the user to search by first, last, or full name
-    if (
-      Name.toLowerCase() === player.toLowerCase() ||
-      FirstName.toLowerCase() === player.toLowerCase() ||
-      LastName.toLowerCase() === player.toLowerCase()
-    ) {
-      playerContainer.insertAdjacentHTML("afterbegin", html);
-    }
+    data.forEach((obj, index) => {
+      if (
+        player === obj.Name ||
+        player === obj.FirstName ||
+        player === obj.LastName
+      ) {
+        let html = `<div id="player-card" class="card" style="width: 16rem">
+        <img
+        id="photo"
+          src="${obj.PhotoUrl}"
+          class="card-img-center"
+        />
+        <div id="player-info" class="card-body">
+          <h5 id="name">${obj.Name} #${obj.Number}</h5>
+          <h6>Position: ${obj.Position}</h6>
+          <h6>Height: ${obj.Height}</h6>
+          <h6>Weight: ${obj.Weight}</h6>
+          <h6>Status: ${obj.Status}</h6>
+        </div>
+      </div>`;
+        console.log(obj.Name, index);
+        if (
+          Name.toLowerCase() === player.toLowerCase() ||
+          FirstName.toLowerCase() === player.toLowerCase() ||
+          LastName.toLowerCase() === player.toLowerCase()
+        ) {
+          playerContainer.insertAdjacentHTML("afterbegin", html);
+          console.log(Name);
+        } else {
+          return;
+        }
+      }
+    });
 
     console.log(data[player]);
   } catch (error) {
@@ -73,12 +74,12 @@ var searchBar = document.getElementById("search_bar");
 //add event listener to recieve users input.
 searchBtn.addEventListener("click", function () {
   let searchValue = searchBar.value;
-  let card = document.getElementById("player-card");
+  let card = document.getElementById("player-container");
   let searchedPlayer = getPlayerData(searchValue);
 
   console.log(searchedPlayer);
   // remove last card after a new search
-  card.remove();
+  card.innerHTML = "";
   // clear the search bar
   searchBar.value = "";
 });
