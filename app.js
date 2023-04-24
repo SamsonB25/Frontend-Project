@@ -49,6 +49,7 @@ async function getPlayerData(player) {
         </div>
       </div>`;
         console.log(obj.Name, index);
+
         if (
           Name.toLowerCase() === player.toLowerCase() ||
           FirstName.toLowerCase() === player.toLowerCase() ||
@@ -56,8 +57,12 @@ async function getPlayerData(player) {
         ) {
           playerContainer.insertAdjacentHTML("afterbegin", html);
           console.log(Name);
-        } else {
-          return;
+        } else if (
+          Name.toLowerCase() == player.toLowerCase() ||
+          FirstName.toLowerCase() == player.toLowerCase() ||
+          LastName.toLowerCase() == player.toLowerCase()
+        ) {
+          alert(`${player} Doe No`);
         }
       }
     });
