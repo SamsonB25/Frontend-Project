@@ -1,71 +1,46 @@
-let playerData;
-
-const playerContainer = document.getElementById("player-container");
+const cards = document.getElementById("card-container");
+const URL = `https://api.sportsdata.io/v3/nfl/scores/json/Players/buf?key=436a1b238845470ea2a5946e906348e8`;
 
 // create async function to recieve data from api and ba able to call it later.
 async function getPlayerData(player) {
   // create a try...catch statement
   try {
     // fetch data from API
-    const response = await fetch(
-      "https://api.sportsdata.io/v3/nfl/scores/json/Players/buf?key=436a1b238845470ea2a5946e906348e8"
-    );
+    const response = await fetch(URL);
     //convert the API response
     const data = await response.json();
-    console.log(data);
-
-    //find player and index of player to allow user to search for name instead of index
-
-    // let name = data.find((obj) => obj.Name === player).Name;
-    let index = data.findIndex(
-      (obj) =>
-        obj.Name === player ||
-        obj.LastName === player ||
-        obj.FirstName === player
-    );
-
-    let { Name, FirstName, LastName } = data[index];
+    // console.log(data);
 
     // generate card using html
-    data.forEach((obj, index) => {
-      if (
-        player === obj.Name ||
-        player === obj.FirstName ||
-        player === obj.LastName
-      ) {
-        let html = `<div id="player-card" class="card" style="width: 16rem">
-        <img
-        id="photo"
-          src="${obj.PhotoUrl}"
-          class="card-img-center"
-        />
-        <div id="player-info" class="card-body">
-          <h5 id="name">${obj.Name} #${obj.Number}</h5>
-          <h6>Position: ${obj.Position}</h6>
-          <h6>Height: ${obj.Height}</h6>
-          <h6>Weight: ${obj.Weight}</h6>
-          <h6>Status: ${obj.Status}</h6>
+    data.forEach((obj, i) => {
+      let html = `<div class="cards">
+        <div class="card-img">
+          <img
+            src="${obj.PhotoUrl}"
+          />
+        </div>
+        <div class="card-body">
+          <h2>${obj.Name} <em></br>#${obj.Number}</em></h2>
+          <p>Position: ${obj.Position} <span>
+          </br>Height: ${obj.Height}<span><span>
+          </br>Weight: ${obj.Weight}<span><span>
+          </br>Status: ${obj.Status}<span></p>
+            <div class="card-footer">
+              <a href="#">Stats</a>
+            </div>
         </div>
       </div>`;
-        console.log(obj.Name, index);
-      }
+
       if (
-        Name.toLowerCase() === player.toLowerCase() ||
-        FirstName.toLowerCase() === player.toLowerCase() ||
-        LastName.toLowerCase() === player.toLowerCase()
+        player.toLowerCase() === obj.Name.toLowerCase() ||
+        player.toLowerCase() === obj.FirstName.toLowerCase() ||
+        player.toLowerCase() === obj.LastName.toLowerCase() ||
+        player.toLowerCase() === obj.Position.toLowerCase()
       ) {
-        playerContainer.insertAdjacentHTML("afterbegin", html);
-        console.log(Name);
-      } else if (
-        Name.toLowerCase() == player.toLowerCase() ||
-        FirstName.toLowerCase() == player.toLowerCase() ||
-        LastName.toLowerCase() == player.toLowerCase()
-      ) {
-        alert(`${player} Doe No`);
+        // console.log(obj.Name);
+        cards.insertAdjacentHTML("afterbegin", html);
       }
     });
-
-    console.log(data[player]);
   } catch (error) {
     console.error(error);
   }
@@ -77,12 +52,11 @@ var searchBar = document.getElementById("search_bar");
 //add event listener to recieve users input.
 searchBtn.addEventListener("click", function () {
   let searchValue = searchBar.value;
-  let card = document.getElementById("player-container");
   let searchedPlayer = getPlayerData(searchValue);
 
-  console.log(searchedPlayer);
+  // console.log(searchValue);
   // remove last card after a new search
-  card.innerHTML = "";
+  cards.innerHTML = "";
   // clear the search bar
   searchBar.value = "";
 });

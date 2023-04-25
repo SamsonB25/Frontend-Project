@@ -22,89 +22,102 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav
-      id="nav_bar"
-      class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-      data-bs-theme="dark"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html?#"
-          ><img
-            class="logo"
-            src="https://1000logos.net/wp-content/uploads/2017/08/Color-Buffalo-Bills-logo.jpg"
-        /></a>
+    <header>
+      <nav
+        id="nav_bar"
+        class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html?#"
+            ><img
+              class="logo"
+              src="https://1000logos.net/wp-content/uploads/2017/08/Color-Buffalo-Bills-logo.jpg"
+          /></a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="roster.html?#"
-                >Roster</a
-              >
-            </li>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="roster.html?#"
+                  >Roster</a
+                >
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="news.html?#"
-                >News</a
-              >
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="news.html?#"
+                  >News</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-
-    <h1 class="text-center">BILLS MAFIA</h1>
-    <div id="intro" class="p-3 mb-2 bg-black">
-      <h6>
-        The Bills were founded in 1960 as a charter member of the American
-        Football League (AFL), and joined the NFL as part of the AFL-NFL merger
-        in 1970. The team plays its home games at Highmark Stadium, which has a
-        seating capacity of over 71,000. The Bills have won the AFC East
-        division title ten times, and have appeared in four Super Bowls (1991,
-        1992, 1993, and 1994), although they lost all four of those games. The
-        team's colors are royal blue, red, white, and navy blue. The Bills have
-        had several notable players throughout their history, including Hall of
-        Fame quarterback Jim Kelly, running back Thurman Thomas, and wide
-        receiver Andre Reed. The current head coach is Sean McDermott, and the
-        team's starting quarterback is Josh Allen.
-      </h6>
-    </div>
-    <form class="d-flex" role="search">
-      <input
-        id="search_bar"
-        class="form-control me-2"
-        type="search"
-        placeholder="Search Player By Name"
-        aria-label="Search"
-      />
-      <button id="search_button" class="btn btn-primary" type="submit">
-        Search
-      </button>
-    </form>
-    <div id="player-container" class="row row-cols-1 row-cols-md-1 g-1">
-      <div id="player-card" class="card" style="width: 16rem">
-        <img
-          id="photo"
-          src="https://media.bleacherreport.com/image/upload/v1666874932/ptwzi6tsuebwdo1pt6am.jpg"
-          class="card-img-center"
-        />
-        <div id="player-info" class="card-body">
-          <h5 id="name">Bills Mafia #1</h5>
+      </nav>
+    </header>
+    <div class="page-container">
+      <main>
+        <h1 class="text-center">BILLS MAFIA</h1>
+        <div id="intro" class="p-3 mb-2 bg-black">
+          <h6>
+            The Bills were founded in 1960 as a charter member of the American
+            Football League (AFL), and joined the NFL as part of the AFL-NFL
+            merger in 1970. The team plays its home games at Highmark Stadium,
+            which has a seating capacity of over 71,000. The Bills have won the
+            AFC East division title ten times, and have appeared in four Super
+            Bowls (1991, 1992, 1993, and 1994), although they lost all four of
+            those games. The team's colors are royal blue, red, white, and navy
+            blue. The Bills have had several notable players throughout their
+            history, including Hall of Fame quarterback Jim Kelly, running back
+            Thurman Thomas, and wide receiver Andre Reed. The current head coach
+            is Sean McDermott, and the team's starting quarterback is Josh
+            Allen.
+          </h6>
         </div>
-      </div>
+        <form class="d-flex" role="search">
+          <input
+            id="search_bar"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search By Name or Position"
+            aria-label="Search"
+          />
+          <button id="search_button" class="btn btn-primary" type="submit">
+            Search
+          </button>
+        </form>
+        <div id="card-container">
+          <div class="cards">
+            <div class="card-img">
+              <img
+                src="https://media.bleacherreport.com/image/upload/v1666874932/ptwzi6tsuebwdo1pt6am.jpg"
+              />
+            </div>
+            <div class="card-body">
+              <h2>Bills Mafia # 1</h2>
+            </div>
+            <div class="card-footer">
+              <a href="#">Stats</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer><p>Created By: Samson Brown</p></footer>
     </div>
   </body>
 </html>

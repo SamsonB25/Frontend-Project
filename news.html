@@ -22,67 +22,74 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav
-      id="nav_bar"
-      class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-      data-bs-theme="dark"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html?#"
-          ><img
-            class="logo"
-            src="https://1000logos.net/wp-content/uploads/2017/08/Color-Buffalo-Bills-logo.jpg"
-        /></a>
+    <header>
+      <nav
+        id="nav_bar"
+        class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html?#"
+            ><img
+              class="logo"
+              src="https://1000logos.net/wp-content/uploads/2017/08/Color-Buffalo-Bills-logo.jpg"
+          /></a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="roster.html?#"
-                >Roster</a
-              >
-            </li>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="roster.html?#"
+                  >Roster</a
+                >
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="news.html?#"
-                >News</a
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="news.html?#"
+                  >News</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                id="search_bar"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                id="search_button"
+                class="btn btn-outline-primary"
+                type="submit"
               >
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              id="search_bar"
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button
-              id="search_button"
-              class="btn btn-outline-primary"
-              type="submit"
-            >
-              Search
-            </button>
-          </form>
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-    <h1 class="text-center">LEAGUE NEWS</h1>
-    <div id="news" class="p-3 mb-2 bg-black"></div>
-    <div id="player-container"></div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="text-center">LEAGUE NEWS</h1>
+      <div id="news" class="p-3 mb-2 bg-black"></div>
+      <div id="player-container"></div>
+    </main>
   </body>
 </html>
