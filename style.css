@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+
 /* Body */
 body {
   background-image: url(https://images7.alphacoders.com/981/981713.png);
@@ -58,6 +60,7 @@ footer {
 #intro {
   color: white;
   border-radius: 10px;
+  font-family: Bruno Ace SC;
 }
 
 /* search bar and button */
@@ -119,6 +122,7 @@ form {
   border-radius: 10px;
   padding: 10px;
   margin: 4px;
+  font-family: Bruno Ace SC;
 }
 #news {
   border: 1px solid red;
