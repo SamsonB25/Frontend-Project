@@ -52,11 +52,11 @@ var searchBar = document.getElementById("search_bar");
 //add event listener to recieve users input.
 searchBtn.addEventListener("click", function () {
   let searchValue = searchBar.value;
-  let searchedPlayer = getPlayerData(searchValue);
 
   // console.log(searchValue);
   // remove last card after a new search
   cards.innerHTML = "";
   // clear the search bar
   searchBar.value = "";
+  getPlayerData(searchValue);
 });
